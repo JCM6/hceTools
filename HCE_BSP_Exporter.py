@@ -180,7 +180,7 @@ def register():
     bpy.utils.register_class(ExportJMS)
 
 def menu_func( self, context ):
-    self.layout.operator( ExportJMS.bl_idname, text = "Halo 1 CE JMS Exporter collision (.jms)" )
+    self.layout.operator( ExportJMS.bl_idname, text = "Halo 1 CE JMS Exporter BSP (.jms)" )
 
 def register():
     bpy.utils.register_class( ExportJMS )
