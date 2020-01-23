@@ -6,8 +6,19 @@ from bpy.props import StringProperty, BoolProperty, IntProperty, FloatProperty, 
 #Declare objects
 
 #All
-allObjectsArray = []
-allObjectNames = []
+def allObjectsArray():
+    objects = bpy.context.scene.objects
+    return objects
+
+allSceneObjects = allObjectsArray()
+
+def allObjectNames(sceneObjects):
+    for obj in sceneObjects:
+        names = str(obj.name)
+        print(names)
+    return names
+
+allObjectNames(allSceneObjects)
 
 #Nodes
 nodeObjects = []
@@ -71,3 +82,6 @@ class jcmExporterBSP(bpy.types.Panel):
         self.layout.label(text='Use this script to export.jms geometry.')
         
 bpy.utils.register_class(jcmExporterBSP)
+
+
+
