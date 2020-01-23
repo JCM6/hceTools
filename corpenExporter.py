@@ -48,11 +48,7 @@ class Blam_ExportJmsModel(Operator, ExportHelper):
 
     filename_ext = ".jms"
 
-    filter_glob: StringProperty(
-        default="*.jms",
-        options={"HIDDEN"},
-        maxlen=255,  # Max internal buffer length, longer would be clamped.
-        )
+    filter_glob: StringProperty(default="*.jms", options={"HIDDEN"}, maxlen=255,)
     
     use_mesh_modifiers: BoolProperty(
         name="Apply Modifiers",
