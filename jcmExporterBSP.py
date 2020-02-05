@@ -83,5 +83,20 @@ class jcmExporterBSP(bpy.types.Panel):
         
 bpy.utils.register_class(jcmExporterBSP)
 
+def buildJMS():
+    nodeCount = 1
+    fileHeader = "8200\n3251\n%dd\n" % (nodeCount)
+    print(str(fileHeader))
+    for n in range(nodeCount):
+        nodeName = "frame"
+        nodeNextSiblingIndex = -1
+        nodeFirstChildIndex = -1
+        nodeRotation = (0,0,0,1) #i, j, k, w vectors
+        nodeTranslation = (0,0,0) #x, y, z coordinates
+        
+        nodeArray = [[nodeName, nodeNextSiblingIndex, nodeFirstChildIndex], nodeRotation, nodeTranslation]
+        nodeArray = [i for n in nodeArray for i in n]
+        out += ("")
+
 
 
