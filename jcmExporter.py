@@ -15,7 +15,7 @@ blInfo = {
 #imports
 import bpy
 import os
-from bp_extras.io_utils import ExportHelper
+from bpy_extras.io_utils import ExportHelper
 from bpy.props import StringProperty, BoolProperty
 
 class JMSExport(bpy.types.Operator, ExportHelper):
@@ -44,9 +44,7 @@ class JMSExport(bpy.types.Operator, ExportHelper):
         box.prop(self, 'option_selection_only')
         
     def serialiseModel():
-        frameNode = 1
-        outputNodes = ""
-                        
+        frameNode = 1                
 
 
 #Varialbles
@@ -102,5 +100,3 @@ validJMS = False
 #needs to be implemented.
 def getFaceSmoothing():
     return
-
-print(selectedObjects)
