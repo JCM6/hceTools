@@ -18,6 +18,19 @@
 #
 # ##### END GPL LICENSE BLOCK #####
 
+bl_info = {
+    "name": "Halo 1 CE JMS Exporter for collision",
+    "author": "",
+    "version": ( 1, 0, 3 ),
+    "blender": ( 2, 8, 1 ),
+    "location": "File > Export > Halo 1 CE JMS Exporter collision (.jms)",
+    "description": "Halo 1 CE JMS Exporter collision (.jms)",
+    "warning": "",
+    "wiki_url": "",
+    "tracker_url": "",
+    "category": "Import-Export"
+}
+
 import bpy
 import bmesh
 from bpy_extras.io_utils import ExportHelper
@@ -46,6 +59,7 @@ class Blam_ExportJmsModel(Operator, ExportHelper):
     bl_label = "Export Halo model file"
     bl_options = {"PRESET"}
     filename_ext = ".jms"
+    
 
     def filter_glob(): StringProperty(default="*.jms", options={"HIDDEN"}, maxlen=255)
     
